@@ -1,2 +1,2 @@
 # Cordova-Ionic-Angular-Maps-WITravel
-Ionic-Cordova-Angular With Firebase Auth
+This project fetches posts on Wordpress API With Authentication Login Connected to Firebase Auth
