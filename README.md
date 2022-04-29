@@ -12,7 +12,7 @@ npm install -g @ionic/cli
 ```
 
 Setup the Firebase connection on `app.module.ts`
-```js
+```ts
 var config = {
   apiKey: '',
   authDomain: '',
@@ -24,7 +24,7 @@ var config = {
 ```
 
 Paste Wordpress URL on `src/config.ts`
-```
+```ts
 export const WORDPRESS_URL = '';
 ```
 
@@ -32,18 +32,18 @@ export const WORDPRESS_URL = '';
 ### Usage
 
 Run the following command to start Ionic:
-```
+```bash
 ionic serve
 ```
 
 ### Deploy
 Run build command to deploy Android/IOS:
-```
+```bash
 ionic build
 ```
 
 Released APK is located on directory:
-```
+```bash
 platforms\android\app\build\outputs\apk\debug\app-debug.apk
 ```
 
