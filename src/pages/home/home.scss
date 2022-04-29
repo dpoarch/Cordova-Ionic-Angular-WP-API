@@ -1,0 +1,86 @@
+page-home {
+  .content{
+    background-color: #f4f4f7;
+  }
+  
+  .toolbar-icon {
+    color: #FFF;
+    font-weight: bold;
+  }
+
+  .toolbar-md-danger .toolbar-background-md{
+  background: linear-gradient(to right, #2451f6, #b824f6);
+  }
+
+  .toolbar-md-danger .toolbar-background-md{
+      background: linear-gradient(to right, #2451f6, #b824f6);
+      }
+      .card-background-page {
+
+    ion-card {
+      position: relative;
+      text-align: center;
+    }
+
+    .card-title {
+      position: absolute;
+      top: 36%;
+      font-size: 2.0em;
+      width: 100%;
+      font-weight: bold;
+      color: #fff;
+    }
+
+    .card-subtitle {
+      font-size: 1.0em;
+      position: absolute;
+      top: 52%;
+      width: 100%;
+      color: #fff;
+    }
+
+  }
+  .background{
+  background-size: cover;
+    background-image: linear-gradient(top, rgba(0, 0, 0, 0.44), transparent), url(https://i.imgur.com/U8fgYR5.jpg);
+    background-repeat:no-repeat;
+    width:100%;
+    height:60%;
+        .title{
+        position:absolute;
+        top:20%;
+        width:100%;
+      text-shadow:1px 0px #222; 
+      text-align:center; 
+      font-family:rage; 
+      font-size:65px; 
+      color:#fff; 
+      font-weight:500;
+        }
+        .subtitle{
+        position:absolute;
+        top:34%;
+        width:100%;
+  text-shadow:1px 0px #222; 
+  text-align:center; 
+  font-style:italic;
+  font-size:25px; 
+  color:#fff; 
+  font-weight:500;
+        }
+        .quote{
+        position:absolute;
+        top:38%;
+        width:100%;
+  text-shadow:1px 0px #222; 
+  text-align:center; 
+  font-weight:100;
+  font-size:15px; 
+  color:#fff; 
+  font-weight:500;
+        }
+  }
+  .toolbar-ios-danger .toolbar-background-ios{
+    background: linear-gradient(to right, #2451f6, #b824f6);
+  }
+}

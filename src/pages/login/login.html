@@ -1,0 +1,80 @@
+<ion-content padding>
+  <div>
+  <ion-segment [(ngModel)]="pet">
+    <ion-segment-button class="segment-button segment-activated" value="cola">
+      Login
+    </ion-segment-button>
+    <ion-segment-button value="puppies">
+      Register
+    </ion-segment-button>
+  </ion-segment>
+</div>
+
+<div [ngSwitch]="pet">
+  <ion-list *ngSwitchCase="'puppies'">
+            <ion-grid>
+              <ion-row center>
+                    <ion-col>
+                        <h1 margin-top style="text-shadow:1px 0px #222; font-family:rage; font-size:65px; color:#fff; font-weight:500;">Wii Travel</h1>
+                    </ion-col>
+              </ion-row>
+          </ion-grid>
+
+  <ion-item>
+              <ion-label color="light"   floating>First Name</ion-label>
+              <ion-input color="light" type="text" ></ion-input>
+  </ion-item>
+  <ion-item>
+      <ion-label color="light"   floating>Last Name</ion-label>
+      <ion-input color="light" type="text" ></ion-input>
+</ion-item>
+
+    <ion-item>
+      <ion-label color="light"   floating>Email</ion-label>
+      <ion-input color="light" type="email"  [(ngModel)]="user.email" ></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label color="light" floating>Password</ion-label>
+      <ion-input color="light"  [(ngModel)]="user.password" type="password" ></ion-input>
+    </ion-item>
+    <br>
+    <button ion-button full type="submit" (click)="register(user)" color="danger">Register</button>
+  </ion-list>
+
+  <ion-list *ngSwitchCase="'cola'">
+
+          <ion-grid>
+              <ion-row center text-center>
+                    <ion-col>
+                      <img src="../assets/WiiTravel-Logo.png" width="30%"/>
+                        <h1 margin-top style="text-shadow:1px 0px #222; font-family:rage; font-size:65px; color:#fff; font-weight:500;">Wii Travel</h1>
+                    </ion-col>
+              </ion-row>
+          </ion-grid>
+      
+    <ion-item>
+      <ion-label color="light" floating>Username</ion-label>
+      <ion-input type="email"  [(ngModel)]="user.email"  required></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label color="light" floating>Password</ion-label>
+      <ion-input type="password" [(ngModel)]="user.password"  required></ion-input>
+    </ion-item>
+    <div margin>
+    <p class="error-message" *ngIf="error_message">{{error_message}}</p>
+    <button ion-button full class="login-button" type="submit" (click)="logged(user)" color="danger">Login</button>
+
+    <a class="center" text-left href="#">Forgot password?</a>
+    <a class="center" text-right href="#" style="margin-left:100px; " (click)="skip()" >Skip login</a>
+
+  </div>
+
+  </ion-list>
+</div>
+<div margin-top style="margin:0 auto; width:100%; padding:5px;">
+
+</div>
+
+</ion-content>
