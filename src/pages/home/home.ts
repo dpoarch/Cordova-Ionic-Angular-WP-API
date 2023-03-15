@@ -11,7 +11,10 @@ import { AuthenticationService } from '../../services/authentication.service';
   templateUrl: 'home.html'
 })
 export class HomePage {
-
+  images = {
+    balibago: '/assets/images/astro.jpg',
+    baguio: '/assets/images/baguio.jpg'
+  }
 	posts: Array<any> = new Array<any>();
   morePagesAvailable: boolean = true;
   loggedUser: boolean = false;

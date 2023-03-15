@@ -6,7 +6,6 @@ import { MyApp } from './app.component';
 
 import { PostPage } from '../pages/post/post';
 import { HomePage } from '../pages/home/home';
-import { RegisterPage } from '../pages/register/register';
 import { LoginPage } from '../pages/login/login';
 import { AboutPage } from '../pages/about/about';
 import { MapPage } from '../pages/map/map';
@@ -48,7 +47,6 @@ var config = {
     EditDataPage,
     BlogPage,
     LoginPage,
-    RegisterPage,
     MainpagePage,
     AboutPage,
     MapPage,
@@ -70,7 +68,6 @@ var config = {
     EditDataPage,
     BlogPage,
     LoginPage,
-    RegisterPage,
     MainpagePage,
     AboutPage,
     MapPage,

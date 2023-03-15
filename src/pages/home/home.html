@@ -11,29 +11,27 @@
 </ion-header>
 
 <ion-content class="card-background-page">
-    <div class="background">
-        <div class="title">Wii Travel</div>
-        <div class="subtitle">Best Destinations</div>
-        <p class="quote">Discover the wonders of the old and new</p>
-    </div>
-    <h1 text-center margin style="font-weight: 300;">Populart Itenaries</h1>
-    <div padding>
+  <div class="background">
+    <div class="title">Wii Travel</div>
+    <div class="subtitle">Best Destinations</div>
+    <p class="quote">Discover the wonders of the old and new</p>
+  </div>
+  <h1 text-center margin style="font-weight: 300;">Populart Itenaries</h1>
+  <div padding>
     <ion-card>
-        <img src="https://scontent.fcrk1-1.fna.fbcdn.net/v/t1.0-9/15621819_1389450444413229_4620229987951687058_n.jpg?_nc_eui2=v1%3AAeHNLGfum7kPFOxBJX_g54bOxEx3wgEqD9tdyASzrcTuFXoAvOG2_cAm0hyMIrcSqeikC5wFVft1QaZkx8Qz1wF_2F3BeZd8tMWX2LhoQNLMEw&oh=7164da0cadffd80af6459c04414cb62a&oe=5B3A7FB3"/>
-        <div class="card-title">Baguio</div>
-        <div class="card-subtitle"></div>
-      </ion-card>
-    
-      <ion-card margin-top>
-        <img src="https://i.imgur.com/oBhA2t2g.jpg" height="240px">
-        <div class="card-title">Balibago</div>
-        <div class="card-subtitle">64 Listings</div>
-      </ion-card>
-     </div>
+      <img [src]="images.baguio" />
+      <div class="card-title">Baguio</div>
+      <div class="card-subtitle"></div>
+    </ion-card>
+
+    <ion-card margin-top>
+      <img [src]="images.balibago" height="240px">
+      <div class="card-title">Balibago</div>
+      <div class="card-subtitle">64 Listings</div>
+    </ion-card>
+  </div>
   <ion-infinite-scroll [enabled]="morePagesAvailable" (ionInfinite)="doInfinite($event)">
-    <ion-infinite-scroll-content
-    loadingSpinner="bubbles"
-    loadingText="Loading more posts ...">
+    <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="Loading more posts ...">
     </ion-infinite-scroll-content>
   </ion-infinite-scroll>
 </ion-content>

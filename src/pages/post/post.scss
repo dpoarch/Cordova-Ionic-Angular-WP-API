@@ -3,7 +3,7 @@ page-post {
     padding: 6px;
   }
 
-  .post-title{
+  .post-title {
     display: block;
     font-size: 1.8rem;
     line-height: 1.2;
@@ -12,14 +12,14 @@ page-post {
     padding: 8px 0;
   }
 
-  .post-content{
+  .post-content {
     margin: 0 0 2px;
     font-size: 1.4rem;
     color: #666;
     line-height: 1.4;
   }
 
-  .bold-title{
+  .bold-title {
     font-weight: bold;
     font-size: inherit;
     color: #000;
@@ -31,13 +31,15 @@ page-post {
     flex-basis: auto;
   }
 
-  .post img{
+  .post img {
     height: 100%;
   }
-    .toolbar-md-danger .toolbar-background-md{
-  background: linear-gradient(to right, #2451f6, #b824f6);
+
+  .toolbar-md-danger .toolbar-background-md {
+    background: linear-gradient(to right, #2451f6, #b824f6);
   }
-  .button-md-danger{
+
+  .button-md-danger {
     background: linear-gradient(to right, #2451f6, #b824f6);
   }
 }

@@ -14,7 +14,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'about.html',
 })
 export class AboutPage {
-
+  images = {resort: '/assets/images/subic resort.jpg'}
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 

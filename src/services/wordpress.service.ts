@@ -4,6 +4,7 @@ import * as Config from '../config';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/observable/forkJoin';
+import { configuration } from '../config';
 
 @Injectable()
 export class WordpressService {
@@ -14,22 +15,22 @@ export class WordpressService {
     let category_url = categoryId? ("&categories=" + categoryId): "";
 
     return this.http.get(
-      Config.WORDPRESS_REST_API_URL
-      + 'posts?page=' + page
+      configuration.site.WORDPRESS_REST_API_URL
+      + '/posts?page=' + page
       + category_url)
     .map(res => res.json());
   }
 
   getComments(postId:number, page:number = 1){
     return this.http.get(
-      Config.WORDPRESS_REST_API_URL
-      + "comments?post=" + postId
+      configuration.site.WORDPRESS_REST_API_URL
+      + "/comments?post=" + postId
       + '&page=' + page)
     .map(res => res.json());
   }
 
   getAuthor(author){
-    return this.http.get(Config.WORDPRESS_REST_API_URL + "users/" + author)
+    return this.http.get(configuration.site.WORDPRESS_REST_API_URL + "/users/" + author)
     .map(res => res.json());
   }
 
@@ -44,7 +45,7 @@ export class WordpressService {
   }
 
   getCategory(category){
-    return this.http.get(Config.WORDPRESS_REST_API_URL + "categories/" + category)
+    return this.http.get(configuration.site.WORDPRESS_REST_API_URL + "/categories/" + category)
     .map(res => res.json());
   }
 
@@ -52,7 +53,7 @@ export class WordpressService {
     let header: Headers = new Headers();
     header.append('Authorization', 'Bearer ' + user.token);
 
-    return this.http.post(Config.WORDPRESS_REST_API_URL + "comments?token=" + user.token, {
+    return this.http.post(configuration.site.WORDPRESS_REST_API_URL + "/comments?token=" + user.token, {
       author_name: user.displayname,
       author_email: user.email,
       post: postId,

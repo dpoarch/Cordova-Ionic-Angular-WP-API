@@ -1,21 +1,22 @@
 page-home {
-  .content{
+  .content {
     background-color: #f4f4f7;
   }
-  
+
   .toolbar-icon {
     color: #FFF;
     font-weight: bold;
   }
 
-  .toolbar-md-danger .toolbar-background-md{
-  background: linear-gradient(to right, #2451f6, #b824f6);
+  .toolbar-md-danger .toolbar-background-md {
+    background: linear-gradient(to right, #2451f6, #b824f6);
   }
 
-  .toolbar-md-danger .toolbar-background-md{
-      background: linear-gradient(to right, #2451f6, #b824f6);
-      }
-      .card-background-page {
+  .toolbar-md-danger .toolbar-background-md {
+    background: linear-gradient(to right, #2451f6, #b824f6);
+  }
+
+  .card-background-page {
 
     ion-card {
       position: relative;
@@ -40,47 +41,52 @@ page-home {
     }
 
   }
-  .background{
-  background-size: cover;
+
+  .background {
+    background-size: cover;
     background-image: linear-gradient(top, rgba(0, 0, 0, 0.44), transparent), url(https://i.imgur.com/U8fgYR5.jpg);
-    background-repeat:no-repeat;
-    width:100%;
-    height:60%;
-        .title{
-        position:absolute;
-        top:20%;
-        width:100%;
-      text-shadow:1px 0px #222; 
-      text-align:center; 
-      font-family:rage; 
-      font-size:65px; 
-      color:#fff; 
-      font-weight:500;
-        }
-        .subtitle{
-        position:absolute;
-        top:34%;
-        width:100%;
-  text-shadow:1px 0px #222; 
-  text-align:center; 
-  font-style:italic;
-  font-size:25px; 
-  color:#fff; 
-  font-weight:500;
-        }
-        .quote{
-        position:absolute;
-        top:38%;
-        width:100%;
-  text-shadow:1px 0px #222; 
-  text-align:center; 
-  font-weight:100;
-  font-size:15px; 
-  color:#fff; 
-  font-weight:500;
-        }
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 60%;
+
+    .title {
+      position: absolute;
+      top: 20%;
+      width: 100%;
+      text-shadow: 1px 0px #222;
+      text-align: center;
+      font-family: rage;
+      font-size: 65px;
+      color: #fff;
+      font-weight: 500;
+    }
+
+    .subtitle {
+      position: absolute;
+      top: 34%;
+      width: 100%;
+      text-shadow: 1px 0px #222;
+      text-align: center;
+      font-style: italic;
+      font-size: 25px;
+      color: #fff;
+      font-weight: 500;
+    }
+
+    .quote {
+      position: absolute;
+      top: 38%;
+      width: 100%;
+      text-shadow: 1px 0px #222;
+      text-align: center;
+      font-weight: 100;
+      font-size: 15px;
+      color: #fff;
+      font-weight: 500;
+    }
   }
-  .toolbar-ios-danger .toolbar-background-ios{
+
+  .toolbar-ios-danger .toolbar-background-ios {
     background: linear-gradient(to right, #2451f6, #b824f6);
   }
 }

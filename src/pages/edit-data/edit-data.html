@@ -21,11 +21,13 @@
     </ion-item>
     <ion-item>
       <ion-label>Topic</ion-label>
-      <ion-input type="text" placeholder="Enter post title..." [(ngModel)]="data.title" name="title" required="" ></ion-input>
+      <ion-input type="text" placeholder="Enter post title..." [(ngModel)]="data.title" name="title"
+        required=""></ion-input>
     </ion-item>
     <ion-item>
       <ion-label>Content</ion-label>
-      <ion-input type="text" placeholder="Enter post content..." [(ngModel)]="data.content" name="content" required="" ></ion-input>
+      <ion-input type="text" placeholder="Enter post content..." [(ngModel)]="data.content" name="content"
+        required=""></ion-input>
     </ion-item>
     <ion-input type="hidden" [(ngModel)]="data.rowid" name="rowid"></ion-input>
     <button ion-button type="submit" color="success" block>Update Suggestion</button>

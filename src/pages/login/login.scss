@@ -1,70 +1,99 @@
 page-login {
-  .error-message{
+  .error-message {
     color: #FFF;
     padding: 2px;
     font-weight: 500;
     text-align: center;
   }
-  form{
+
+  form {
     text-align: center;
-    color:#222;
-    padding:5px;
-  }
-  .content-md{
-    background-size: cover;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.83), rgba(0, 0, 0, 0.30)), url(https://i.imgur.com/U8fgYR5.jpg);
-    background-repeat:no-repeat;
-  }
-  .item-md{
-    background:none;
-  }
-  .segment-md .segment-button{
-    color:#fff;
-  }
-  .center{
-    color:#fff;
-  }
-  .button-md-danger{
-    background: linear-gradient(to right, #2451f6, #b824f6);
-  }
-  .segment-md .segment-button.activated, .segment-md .segment-button.segment-activated{
-    border-color: #8d10ff;
-    transition: 0.5s;
-    font-size:12pt;
-    color:#fff;
-  }
-  .tabs-md .tab-button[aria-selected=true]{
-  color:#000;
-  }
-  .tabs-md .tab-button-icon{
-  color: rgba(60, 60, 60, 1);
-  }
-  .tabs-md .tab-button[aria-selected=true] .tab-button-icon{
-  color:#000;
-  }
-  .logo{
-  margin-top: 80px !important; 
-  text-shadow:1px 0px #222; 
-  text-align:center; 
-  font-family:rage; 
-  font-size:65px; 
-  color:#fff; 
-  font-weight:500;
-  }
-  .item-md{
-  color:#fff;
-  }
-  .content-ios{
-  background-size: cover;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.83), rgba(0, 0, 0, 0.30)), url(https://i.imgur.com/U8fgYR5.jpg);
-    background-repeat:no-repeat;
-  }
-  .item-ios{
-  background:transparent;
-  color:#fff;
-  }
-  .button-ios-danger{
-  	background: linear-gradient(to right, #2451f6, #b824f6);
+    color: #222;
+    padding: 5px;
   }
 
+  .content-md {
+    background-size: cover;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.83), rgba(0, 0, 0, 0.30)), url(https://i.imgur.com/U8fgYR5.jpg);
+    background-repeat: no-repeat;
+  }
+
+  .item-md {
+    background: none;
+  }
+
+  .segment-md .segment-button {
+    color: #fff;
+  }
+
+  .center {
+    color: #fff;
+  }
+
+  .button-md-danger {
+    background: linear-gradient(to right, #2451f6, #b824f6);
+  }
+
+  .segment-md .segment-button.activated,
+  .segment-md .segment-button.segment-activated {
+    border-color: #8d10ff;
+    transition: 0.5s;
+    font-size: 12pt;
+    color: #fff;
+  }
+
+  .tabs-md .tab-button[aria-selected=true] {
+    color: #000;
+  }
+
+  .tabs-md .tab-button-icon {
+    color: rgba(60, 60, 60, 1);
+  }
+
+  .tabs-md .tab-button[aria-selected=true] .tab-button-icon {
+    color: #000;
+  }
+
+  .logo {
+    margin-top: 80px !important;
+    text-shadow: 1px 0px #222;
+    text-align: center;
+    font-family: rage;
+    font-size: 65px;
+    color: #fff;
+    font-weight: 500;
+  }
+
+  .item-md {
+    color: #fff;
+  }
+
+  .content-ios {
+    background-size: cover;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.83), rgba(0, 0, 0, 0.30)), url(https://i.imgur.com/U8fgYR5.jpg);
+    background-repeat: no-repeat;
+  }
+
+  .item-ios {
+    background: transparent;
+    color: #fff;
+  }
+
+  .button-ios-danger {
+    background: linear-gradient(to right, #2451f6, #b824f6);
+  }
+
+  .title {
+    text-shadow: 1px 0px #222;
+    font-family: rage;
+    font-size: 65px;
+    color: #fff;
+    font-weight: 500;
+  }
+
+  .bottom-pad {
+    margin: 0 auto;
+    width: 100%;
+    padding: 5px;
+  }
 }
