@@ -1,21 +1,20 @@
 import { Injectable } from '@angular/core';
 import { Http, Headers } from '@angular/http';
-import * as Config from '../config';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/observable/forkJoin';
-import { configuration } from '../config';
+import { environment } from '../environments/environment';
 
 @Injectable()
 export class WordpressService {
   constructor(public http: Http){}
 
-  getRecentPosts(categoryId:number, page:number = 1){
+  getRecentPosts(categoryId: number, page: number = 1){
     //if we want to query posts by category
     let category_url = categoryId? ("&categories=" + categoryId): "";
 
     return this.http.get(
-      configuration.site.WORDPRESS_REST_API_URL
+      environment.WPConfiguration.WORDPRESS_REST_API_URL
       + '/posts?page=' + page
       + category_url)
     .map(res => res.json());
@@ -23,14 +22,14 @@ export class WordpressService {
 
   getComments(postId:number, page:number = 1){
     return this.http.get(
-      configuration.site.WORDPRESS_REST_API_URL
+      environment.WPConfiguration.WORDPRESS_REST_API_URL
       + "/comments?post=" + postId
       + '&page=' + page)
     .map(res => res.json());
   }
 
   getAuthor(author){
-    return this.http.get(configuration.site.WORDPRESS_REST_API_URL + "/users/" + author)
+    return this.http.get(environment.WPConfiguration.WORDPRESS_REST_API_URL + "/users/" + author)
     .map(res => res.json());
   }
 
@@ -45,7 +44,7 @@ export class WordpressService {
   }
 
   getCategory(category){
-    return this.http.get(configuration.site.WORDPRESS_REST_API_URL + "/categories/" + category)
+    return this.http.get(environment.WPConfiguration.WORDPRESS_REST_API_URL + "/categories/" + category)
     .map(res => res.json());
   }
 
@@ -53,7 +52,7 @@ export class WordpressService {
     let header: Headers = new Headers();
     header.append('Authorization', 'Bearer ' + user.token);
 
-    return this.http.post(configuration.site.WORDPRESS_REST_API_URL + "/comments?token=" + user.token, {
+    return this.http.post(environment.WPConfiguration.WORDPRESS_REST_API_URL + "/comments?token=" + user.token, {
       author_name: user.displayname,
       author_email: user.email,
       post: postId,

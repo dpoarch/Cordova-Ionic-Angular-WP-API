@@ -1,27 +1,19 @@
 import { Injectable } from '@angular/core';
-import { Http, Headers } from '@angular/http';
-import { configuration } from '../config';
+import { Http } from '@angular/http';
+import { Observable } from 'rxjs';
+import { environment } from '../environments/environment';
+import { User } from '../models/user.model';
 
 @Injectable()
 export class AuthenticationService {
 
   constructor(public http: Http) { }
 
-  doLogin(username, password) {
-    return this.http.post(configuration.site.WORDPRESS_URL + '/wp-json/jwt-auth/v1/token', {
-      username: username,
-      password: password
-    })
+  login(user: User) {
+    return this.http.post(`${environment.WPConfiguration.WORDPRESS_URL}/wp-json/jwt-auth/v1/token`, user);
   }
 
-  doRegister(user_data, token) {
-    return this.http.post(configuration.site.WORDPRESS_REST_API_URL + 'users?token=' + token, user_data);
-  }
-
-  validateAuthToken(token) {
-    let header: Headers = new Headers();
-    header.append('Authorization', 'Basic ' + token);
-    return this.http.post(configuration.site.WORDPRESS_URL + '/wp-json/jwt-auth/v1/token/validate?token=' + token,
-      {}, { headers: header })
+  register(data: any, token){
+    return this.http.post(`${environment.WPConfiguration.WORDPRESS_REST_API_URL}/users?token=${token}`, data);
   }
 }

@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
 import { NavController, LoadingController, AlertController } from 'ionic-angular';
 import { Validators, FormBuilder, FormGroup, FormControl } from '@angular/forms';
-import { WordpressService } from '../../services/wordpress.service';
-import { AuthenticationService } from '../../services/authentication.service';
-import { User } from '../../models/users';
+import { WordpressService } from '../../../services/wordpress.service';
+import { AuthenticationService } from '../../../services/authentication.service';
+import { User } from '../../../models/user.model';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { TabsPage } from '../tabs/tabs';
 
@@ -26,7 +26,7 @@ export class LoginPage {
     public formBuilder: FormBuilder,
     public wordpressService: WordpressService,
     public authenticationService: AuthenticationService,
-    private afAuth: AngularFireAuth,
+    private angularFireService: AngularFireAuth,
     public alertCtrl: AlertController
   ) { this.tab = this.navCtrl.parent; }
 
@@ -45,16 +45,14 @@ export class LoginPage {
   }
 
   // WP ADMIN Login
-  onWpLogin(values) {
-    this.authenticationService.doLogin(this.user?.email, this.user?.password)
+  onWpLogin(values): void {
+    this.authenticationService.login(this.user)
       .subscribe({
         next: (response: any) => {
-          this.onWpRegister({
-            username: values.username,
-            name: values.displayName,
-            email: values.email,
-            password: values.password
-          }, response.json().token);
+          if(response.data){
+            localStorage.setItem('user', JSON.stringify(response.data));
+            this.navCtrl.setRoot(TabsPage);
+          }
         },
         error: (err: any) => {
           console.log('Error: ', err);
@@ -63,8 +61,8 @@ export class LoginPage {
   }
 
   // WP ADD USER
-  onWpRegister(data, token){
-  this.authenticationService.doRegister(data, token)
+  onWpRegister(data, token): void{
+  this.authenticationService.register(data, token)
           .subscribe({
             next: (response : any) => {
               console.log(response);
@@ -79,7 +77,7 @@ export class LoginPage {
   // ANGULAR FIRE REGISTER
   async firebaseReg(user: User) {
     try {
-      const result = this.afAuth.auth.createUserWithEmailAndPassword(user.email, user.password);
+      const result = this.angularFireService.auth.createUserWithEmailAndPassword(user.email, user.password);
       if (result) {
         let alert = this.alertCtrl.create({
           title: '',
@@ -97,7 +95,7 @@ export class LoginPage {
    // ANGULAR FIRE AUTH WITH EMAIL/PASS
   async firebaseLogin(user: User) {
     try {
-      const result = this.afAuth.auth.signInWithEmailAndPassword(user.email, user.password);
+      const result = this.angularFireService.auth.signInWithEmailAndPassword(user.email, user.password);
       if (result) {
         this.navCtrl.setRoot(TabsPage);
       }

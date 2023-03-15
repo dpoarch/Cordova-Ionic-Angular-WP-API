@@ -1,4 +1,4 @@
-# Cordova-Ionic-Angular-WP-API-WITravel
+# Cordova-Ionic-Angular-WP-API
 This project has a json posts on Wordpress API With Authentication Login Connected to Firebase Auth.
 
 ## Installation
@@ -11,19 +11,19 @@ Run this command if Ionic-cli is not installed
 npm install -g @ionic/cli
 ```
 
-Setup the Firebase connection on `app.module.ts`
+Setup the Firebase connection on `src/config.ts`
 ```ts
-var config = {
+export const FirebaseConfiguration = {
   apiKey: '',
   authDomain: '',
   databaseURL: '',
   projectId: '',
   storageBucket: '',
-  messagingSenderId: ''
-};
+  messagingSenderId: '',
+}
 ```
 
-Paste Wordpress URL on `src/config.ts`
+Add Wordpress URL on `src/config.ts`
 ```ts
 export const WORDPRESS_URL = '';
 ```
@@ -34,6 +34,11 @@ export const WORDPRESS_URL = '';
 Run the following command to start Ionic:
 ```bash
 ionic serve
+```
+
+Run the following command to add platform Android:
+```bash
+ionic cordova platform add android
 ```
 
 ### Deploy

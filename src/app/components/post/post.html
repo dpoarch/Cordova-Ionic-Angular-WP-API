@@ -37,15 +37,13 @@
       <p [innerHTML]="comment.content.rendered"></p>
     </ion-item>
     <ion-infinite-scroll [enabled]="morePagesAvailable" (ionInfinite)="loadMoreComments($event)">
-      <ion-infinite-scroll-content
-      loadingSpinner="bubbles"
-      loadingText="Loading comments...">
+      <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="Loading comments...">
       </ion-infinite-scroll-content>
     </ion-infinite-scroll>
- </div>
+  </div>
 </ion-content>
 <ion-footer>
- <ion-toolbar>
-  <button ion-button block color="danger" (click)="createComment()">Add a Comment</button>
- </ion-toolbar>
+  <ion-toolbar>
+    <button ion-button block color="danger" (click)="createComment(post)">Add a Comment</button>
+  </ion-toolbar>
 </ion-footer>

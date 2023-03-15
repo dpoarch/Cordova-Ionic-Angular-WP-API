@@ -2,8 +2,8 @@ import { Component } from '@angular/core';
 import { PostPage } from '../post/post';
 import { LoginPage } from '../login/login';
 import { NavController, LoadingController, NavParams } from 'ionic-angular';
-import { WordpressService } from '../../services/wordpress.service';
-import { AuthenticationService } from '../../services/authentication.service';
+import { WordpressService } from '../../../services/wordpress.service';
+import { AuthenticationService } from '../../../services/authentication.service';
 
 
 @Component({

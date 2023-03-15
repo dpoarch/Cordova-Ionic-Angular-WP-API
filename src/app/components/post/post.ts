@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { NavParams, NavController, LoadingController, AlertController } from 'ionic-angular';
 import { HomePage } from '../home/home';
-import { WordpressService } from '../../services/wordpress.service';
-import { AuthenticationService } from '../../services/authentication.service';
+import { WordpressService } from '../../../services/wordpress.service';
+import { AuthenticationService } from '../../../services/authentication.service';
 import { Observable } from "rxjs/Observable";
 import 'rxjs/add/operator/map';
 import 'rxjs/add/observable/forkJoin';
@@ -33,20 +33,23 @@ export class PostPage {
   ionViewWillEnter(){
     this.morePagesAvailable = true;
     let loading = this.loadingCtrl.create();
-
     loading.present();
-
     this.post = this.navParams.get('item');
 
     Observable.forkJoin(
       this.getAuthorData(),
       this.getCategories(),
       this.getComments())
-      .subscribe(data => {
-        this.user = data[0].name;
-        this.categories = data[1];
-        this.comments = data[2];
-        loading.dismiss();
+      .subscribe({
+        next: (response: any) => {
+          this.user = response[0].name;
+          this.categories = response[1];
+          this.comments = response[2];
+          loading.dismiss();
+        },
+        error: (err: any) => {
+          console.log('Error: ', err);
+        }
       });
   }
 
@@ -65,14 +68,17 @@ export class PostPage {
   loadMoreComments(infiniteScroll) {
     let page = (this.comments.length/10) + 1;
     this.wordpressService.getComments(this.post.id, page)
-    .subscribe(data => {
-      for(let item of data){
-        this.comments.push(item);
+    .subscribe({
+      next: (response: any) => {
+        for(let res of response){
+          this.comments.push(res);
+        }
+        infiniteScroll.complete();
+      },
+      error: (err: any) => {
+        console.log(err);
+        this.morePagesAvailable = false;
       }
-      infiniteScroll.complete();
-    }, err => {
-      console.log(err);
-      this.morePagesAvailable = false;
     })
   }
 
@@ -83,5 +89,16 @@ export class PostPage {
     })
   }
 
+  createComment(post: any){
+    let user = JSON.parse(localStorage.getItem('user'));
+    this.wordpressService.createComment(post.id, user, 'This is a sample comment...').subscribe({
+      next: (response: any) => {
+        console.log(response);
+      },
+      error: (err: any) => {
+        console.log('Error: ', err);
+      }
+    });
+  }
 
 }
