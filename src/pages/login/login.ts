@@ -44,37 +44,40 @@ export class LoginPage {
     loading.dismiss();
   }
 
+  // WP ADMIN Login
   onWpLogin(values) {
     this.authenticationService.doLogin(this.user?.email, this.user?.password)
-      .subscribe(
-        res => {
-          let user_data = {
+      .subscribe({
+        next: (response: any) => {
+          this.onWpRegister({
             username: values.username,
             name: values.displayName,
             email: values.email,
             password: values.password
-          };
-          this.onWpRegister(user_data, res.json().token);
+          }, response.json().token);
         },
-        err => {
-          console.log(err);
+        error: (err: any) => {
+          console.log('Error: ', err);
         }
-      )
+      })
   }
 
+  // WP ADD USER
   onWpRegister(data, token){
   this.authenticationService.doRegister(data, token)
-          .subscribe(
-            result => {
-              console.log(result);
+          .subscribe({
+            next: (response : any) => {
+              console.log(response);
             },
-            error => {
-              console.log(error);
-            }
+            error : (err: any) => {
+              console.log('Error: ', err);
+            } 
+          }
         );
   }
 
-  async register(user: User) {
+  // ANGULAR FIRE REGISTER
+  async firebaseReg(user: User) {
     try {
       const result = this.afAuth.auth.createUserWithEmailAndPassword(user.email, user.password);
       if (result) {
@@ -91,7 +94,8 @@ export class LoginPage {
     }
   }
 
-  async logged(user: User) {
+   // ANGULAR FIRE AUTH WITH EMAIL/PASS
+  async firebaseLogin(user: User) {
     try {
       const result = this.afAuth.auth.signInWithEmailAndPassword(user.email, user.password);
       if (result) {

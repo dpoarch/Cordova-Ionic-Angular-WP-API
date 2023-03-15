@@ -28,15 +28,7 @@ import { AuthenticationService } from '../services/authentication.service';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { IonicStorageModule } from '@ionic/storage';
-
-var config = {
-  apiKey: "",
-  authDomain: "",
-  databaseURL: "",
-  projectId: "",
-  storageBucket: "",
-  messagingSenderId: ""
-};
+import { FirebaseConfiguration } from '../config';
 
 @NgModule({
   declarations: [
@@ -56,7 +48,7 @@ var config = {
     BrowserModule,
     HttpModule,
     IonicModule.forRoot(MyApp),
-    AngularFireModule.initializeApp(config),
+    AngularFireModule.initializeApp(FirebaseConfiguration),
     AngularFireAuthModule
   ],
   bootstrap: [IonicApp],

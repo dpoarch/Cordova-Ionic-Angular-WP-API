@@ -1,6 +1,5 @@
-// CONFIG constants
+// Setup Wordpress Configurations
 export const WORDPRESS_URL = '';
-
 export const configuration = {
     site: {
         WORDPRESS_URL: WORDPRESS_URL,
@@ -11,3 +10,13 @@ export const configuration = {
         WORDPRESS_PASS: ''
     }
 };
+
+// Setup Firebase Configuration
+export const FirebaseConfiguration = {
+  apiKey: '',
+  authDomain: '',
+  databaseURL: '',
+  projectId: '',
+  storageBucket: '',
+  messagingSenderId: '',
+}

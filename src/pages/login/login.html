@@ -42,7 +42,7 @@
         <ion-input color="light" [(ngModel)]="user.password" type="password"></ion-input>
       </ion-item>
       <br>
-      <button ion-button full type="submit" (click)="register(user)" color="danger">Register</button>
+      <button ion-button full type="submit" (click)="firebaseReg(user)" color="danger">Register</button>
     </ion-list>
 
     <ion-list *ngSwitchCase="'login'">
@@ -69,11 +69,18 @@
       </ion-item>
       <div margin>
         <p class="error-message" *ngIf="error_message">{{error_message}}</p>
-        <button ion-button full class="login-button" type="submit" (click)="logged(user)" color="danger">Login</button>
+        <!-- UNCOMMENT TO USE WORDPRESS LOGIN -->
+        <!-- <button ion-button full class="login-button" type="submit" (click)="onWpLogin(user)" color="danger">Login</button> -->
 
-        <a class="center" text-left href="#">Forgot password?</a>
-        <a class="center" text-right href="#" style="margin-left:100px; " (click)="skip()">Skip login</a>
+        <!-- UNCOMMENT TO USE FIREBASE LOGIN -->
+        <button ion-button full class="login-button" type="submit" (click)="firebaseLogin(user)" color="danger">Login</button>
 
+        <a class="center" text-left href="#">
+          Forgot password?
+        </a>
+        <a class="center skip-btn" text-right href="#" (click)="skip()">
+          Skip login
+        </a>
       </div>
     </ion-list>
   </div>

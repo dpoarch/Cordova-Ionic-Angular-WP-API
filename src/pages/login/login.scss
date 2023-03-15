@@ -14,7 +14,7 @@ page-login {
 
   .content-md {
     background-size: cover;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.83), rgba(0, 0, 0, 0.30)), url(https://i.imgur.com/U8fgYR5.jpg);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.83), rgba(0, 0, 0, 0.30)), url('/assets/images/bg.jpg');
     background-repeat: no-repeat;
   }
 
@@ -70,7 +70,7 @@ page-login {
 
   .content-ios {
     background-size: cover;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.83), rgba(0, 0, 0, 0.30)), url(https://i.imgur.com/U8fgYR5.jpg);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.83), rgba(0, 0, 0, 0.30)), url('/assets/images/bg.jpg');
     background-repeat: no-repeat;
   }
 
@@ -95,5 +95,9 @@ page-login {
     margin: 0 auto;
     width: 100%;
     padding: 5px;
+  }
+
+  .skip-btn {
+    margin-left: 100px;
   }
 }
